@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  app:
+    init: true
+    build:
+      context: .
+    volumes:
+      - ./:/app
+      - ~/.bashrc:/root/.bashrc
+      - ~/.ssh:/root/.ssh
+      - ~/.gitconfig:/root/.gitconfig
+    ports:
+      - 3000:3000
+    # env_file: .env
+    tty: true
+    stdin_open: true
